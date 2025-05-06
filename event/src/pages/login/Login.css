@@ -22,6 +22,7 @@
 }
 
 .section_login img{
+    gap: 20px;
     width: 250px;
 }
 
@@ -35,11 +36,10 @@
     justify-content: space-around;
 }
 
-.esqueceu_senha{
-    justify-content: space-around;
-    justify-content: center;
-    align-items: center;
+.esqueceu_senha a{
     color: #A6A0A0;
+    margin-left: 75px;
+    text-decoration: none;
 }
 
 .input_login{
@@ -52,7 +52,7 @@
 }
 
 .input_login hr{
-    width: 300px;
+    width: 320px;
     color: #000000;
 }
 

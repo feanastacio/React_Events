@@ -1,0 +1,35 @@
+
+.main_tipo_evento{
+    height: 100vh;
+    display: flex;
+}
+
+.form_tipo_evento img{
+    padding-left: 55px;
+    width: 500px;
+}
+
+.section_tipo_evento{
+    flex: 1;
+    display: flex;
+    align-items: center;  
+    flex-direction: column; 
+    /* justify-content: center; */
+} 
+
+.form_tipo_evento h1{
+   margin-top: 30px;
+   align-items: center;
+   /* justify-content: center; */
+   margin-bottom: 7px;
+   flex-direction: column;
+}
+
+.section_tipo_evento hr{
+    color: #B51D44;
+    width: 255px;
+}
+
+.cadastro_evento{
+    display: flex;
+}

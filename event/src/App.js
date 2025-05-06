@@ -1,10 +1,12 @@
-import Login from './pages/login/Login';
+import Rotas from './Routes/routes';
 import './App.css';
+// import Login from './pages/login/Login';
 
 function App() {
   return (
-    <Login/>
+      <Rotas/>
+      // <TipoEvento/>
   );
 }
-
+// exporta de forma padrão o app
 export default App;
