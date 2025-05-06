@@ -1,0 +1,71 @@
+
+.main_login{
+    height: 100vh;
+    display: flex;
+}
+
+.banner{
+    flex: 1;
+    background-color: #B51D44;
+    background-image: url("../../assets/images/banner.svg");
+
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.section_login{
+    flex: 1;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.section_login img{
+    width: 250px;
+}
+
+.form_login{
+    width: 50%;
+    height: 50%;
+    display: flex;
+    color: #B51D44;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.esqueceu_senha{
+    justify-content: space-around;
+    justify-content: center;
+    align-items: center;
+    color: #A6A0A0;
+}
+
+.input_login{
+    width: 100%;
+}
+
+.input_login {
+    display: flex;
+    flex-direction: column;
+}
+
+.input_login hr{
+    width: 300px;
+    color: #000000;
+}
+
+.input_login input{
+    height: 30px;
+    margin-top: 5px;
+    padding: 0px 7px;
+    border: none;
+    color: #B4A9A9;
+}
+
+@media screen and (max-width: 773px){ /*Me dá caracteristicas a partir de um tamnaho da tela */
+   .banner{
+    display: none;
+   }
+}
