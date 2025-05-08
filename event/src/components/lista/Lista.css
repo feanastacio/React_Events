@@ -1,90 +1,103 @@
-.lista{
+.listagem{
+    background-color: #b51d44;
+    min-height: calc(100vh - (75px + 252px + 40px));
     display: flex;
-    padding: 40px 0;
-    align-items: center;
     flex-direction: column;
-    background-color: #B51D44;
+    align-items: center;
+    padding: 40px 0;
     margin-top: 50px;
-    color: #FFFFFF;
 }
 
-.lista h1{
-    text-transform: uppercase;
-    font-size: medium;
-    color: #FFFFFF;
+.linha_titulo{
+   max-width: 300px;
+   width: 100%;
+   border-style: solid;
+   border-width: 1px;
+   border-color: #ffffff84;
+   margin-top: 5px;
+   margin-bottom: 20px;   
 }
 
-.lista hr{
+.item_lista img{
+    height: 28px;
+}
+
+.tabela{
     width: 100%;
-    margin-top: 5px;
-    max-width: 300px;
-    border-width: 1px;
-    border-style: solid;
-    border-color: #FFFFFF;
+    margin-top: 30px;
 }
 
-.nome_evento img {
-    height: 20px;
-}
-
-.tabela {
-    width: 100%;  
-    margin-top: 30px;  
-}
 
 .tabela table{
     width: 100%;
     border-collapse: collapse;
 }
 
-/* .tabela .cabecalho :first-child{
+
+.tabela .table_cabecalho :first-child{
     width: 300px;
 }
 
-.tabela .cabecalho :nth-child(2){
+.tabela .table_cabecalho :nth-child(2){
     width: 200px;
-} */
+}
 
-.tabela .cabecalho th{
+.tabela .table_cabecalho th{
     width: 100px;
 }
 
-.nome_evento td{
-    /* Desgrudar o item do titulo */
+.item_lista td{
+    /* desgrudar o item do titulo */
     padding: 20px 0 10px 0;
+    color: white;
 }
 
-.nome_evento{
+.item_lista{
     text-align: center;
-    border-bottom: solid 1px #FFFFFF;
+    border-bottom:  solid 1px #73061B20;
 }
 
-@media screen and (max-width: 768px){
-    /* 1px - 768px  */
+.listagem h1{
+    color: white;
+    font-size: medium;
+}
+
+.listagem hr{
+    width: 130px;
+    margin-top: 12px;
+}
+
+.tabela_cabecalho th{
+    color: white;
+    font-size: 18px;
+    padding: 20px 0px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+@media screen and (max-width: 771px){
     .tabela thead{
         display: none;
     }
-    
-    .nome_evento td{
+
+    .item_lista td{
         display: grid;
         text-align: left;
         padding: 10px 10px 10px 0;
         grid-template-columns: 10ch auto;
     }
 
-    .nome_evento td::before{
-        /* Adiciona o data-cell do html e coloca os : depois */
-        width: 80px;
-        font-weight: 700;
-        text-align: left;
+    .item_lista td::before{
         content: attr(data-cell) ":";
+        font-weight: 700;
+        width: 80px;
+        text-align: left;
     }
 
-    .nome_evento td:last-child{
+    .item_lista td:last-child{
         margin-bottom: 24px;
     }
 
-    .nome_evento td::first-child{
+    .item_lista td:first-child{
         margin-top: 24px;
     }
 }

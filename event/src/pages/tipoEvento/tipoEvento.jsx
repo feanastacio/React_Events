@@ -1,7 +1,8 @@
 import Footer from "../../components/footer/Footer";
 import Header from "../../components/header/Header";
 import Cadastro from "../../components/cadastro/Cadastro";
-import banner_cadastrotipoevento from "../../assets/images/bannerTipoEvento.svg"
+import banner_cadastrotipoevento from "../../assets/images/bannerTipoEvento.svg";
+import Lista from "../../components/lista/Lista";
 import "./TipoEvento.css"
 
 const TipoEvento = () => {
@@ -9,10 +10,16 @@ const TipoEvento = () => {
         <>
         <Header/>           
         <Cadastro
-        img_banner={banner_cadastrotipoevento}
-        tituloCadastro = "Cadastro Tipo de Evento"
-        nomes="Título"
-        visible="none"
+            img_banner={banner_cadastrotipoevento}
+            tituloCadastro = "Cadastro Tipo de Evento"
+            nomes="Título"
+            visible="none"
+        />
+        <Lista
+            nomeLista="Lista Tipo de Eventos"
+            Titulo="Titulo"
+            visible="none"
+            visibilidade="none"
         />
         <Footer/>
         </>

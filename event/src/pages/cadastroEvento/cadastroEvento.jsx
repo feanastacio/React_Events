@@ -15,7 +15,11 @@ const cadastroEvento = () => {
         nomes="Nome"
         visible
         />
-        <Lista/>
+        <Lista
+        nomeLista="Lista Tipo de Eventos"
+        Titulo="Nome"
+        Titulo_Tipoevento=""
+        />
         <Footer/>
         </>
     )

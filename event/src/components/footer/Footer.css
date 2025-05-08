@@ -7,3 +7,5 @@ footer{
     justify-content: center;
     background-color: #FFFFFF;
 }
+
+@media screen and (max-width: 646px){}

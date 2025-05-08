@@ -15,7 +15,11 @@ const TipoUsuario = () => {
         nomes="Nome"
         visible="none"
         />
-        <Lista/>
+        <Lista
+        nomeLista="Lista Tipo de Usuario"
+        Titulo="Titulo"
+        visible_Tipoevento="none"
+        />
         <Footer/>
         </>
     )
