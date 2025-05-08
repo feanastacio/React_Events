@@ -8,7 +8,9 @@ import "./TipoUsuario.css"
 const TipoUsuario = () => {
     return(
         <>
-        <Header/>           
+        <Header
+        visibilidade="none"
+        />           
         <Cadastro
         img_banner={banner_cadastro}
         tituloCadastro = "Cadastro Tipo de Usuário"
@@ -18,7 +20,8 @@ const TipoUsuario = () => {
         <Lista
         nomeLista="Lista Tipo de Usuario"
         Titulo="Titulo"
-        visible_Tipoevento="none"
+        visible="none"
+        visibilidade="none"
         />
         <Footer/>
         </>

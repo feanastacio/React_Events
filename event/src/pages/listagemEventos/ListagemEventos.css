@@ -1,0 +1,11 @@
+
+.main_listagemeventos{
+    display: flex;
+    flex-direction: column;
+    background-color: bisque;
+}
+
+.listagem_eventos{
+    
+}
+

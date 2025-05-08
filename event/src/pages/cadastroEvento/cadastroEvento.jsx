@@ -8,7 +8,9 @@ import "./CadastroEvento.css"
 const cadastroEvento = () => {
     return(
         <>
-        <Header/>           
+        <Header
+        visibilidade="none"
+        />           
         <Cadastro
         img_banner={banner_cadastro}
         tituloCadastro = "Cadastro de Evento"
