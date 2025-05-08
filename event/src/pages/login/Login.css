@@ -37,9 +37,12 @@
 }
 
 .esqueceu_senha a{
+    display: flex;
     color: #A6A0A0;
-    margin-left: 75px;
+    margin-top: 50px;
+    align-items: center;
     text-decoration: none;
+    justify-content: center;
 }
 
 .input_login{
@@ -51,17 +54,23 @@
     flex-direction: column;
 }
 
-.input_login hr{
+/* .input_login hr{
     width: 320px;
     color: #000000;
-}
+} */
 
 .input_login input{
     height: 30px;
-    margin-top: 5px;
+    width: 300px;
+    margin-top: 15px;
+    border-top: none;
     padding: 0px 7px;
-    border: none;
     color: #B4A9A9;
+    border-left: none;
+    border-right: none;
+    border-radius: 2px;
+    border-color: #000000;
+    /* border: none; */
 }
 
 @media screen and (max-width: 773px){ /*Me dá caracteristicas a partir de um tamnaho da tela */

@@ -1,0 +1,90 @@
+.lista{
+    display: flex;
+    padding: 40px 0;
+    align-items: center;
+    flex-direction: column;
+    background-color: #B51D44;
+    margin-top: 50px;
+    color: #FFFFFF;
+}
+
+.lista h1{
+    text-transform: uppercase;
+    font-size: medium;
+    color: #FFFFFF;
+}
+
+.lista hr{
+    width: 100%;
+    margin-top: 5px;
+    max-width: 300px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #FFFFFF;
+}
+
+.nome_evento img {
+    height: 20px;
+}
+
+.tabela {
+    width: 100%;  
+    margin-top: 30px;  
+}
+
+.tabela table{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+/* .tabela .cabecalho :first-child{
+    width: 300px;
+}
+
+.tabela .cabecalho :nth-child(2){
+    width: 200px;
+} */
+
+.tabela .cabecalho th{
+    width: 100px;
+}
+
+.nome_evento td{
+    /* Desgrudar o item do titulo */
+    padding: 20px 0 10px 0;
+}
+
+.nome_evento{
+    text-align: center;
+    border-bottom: solid 1px #FFFFFF;
+}
+
+@media screen and (max-width: 768px){
+    /* 1px - 768px  */
+    .tabela thead{
+        display: none;
+    }
+    
+    .nome_evento td{
+        display: grid;
+        text-align: left;
+        padding: 10px 10px 10px 0;
+        grid-template-columns: 10ch auto;
+    }
+
+    .nome_evento td::before{
+        /* Adiciona o data-cell do html e coloca os : depois */
+        width: 80px;
+        font-weight: 700;
+        text-align: left;
+        content: attr(data-cell) ":";
+    }
+
+    .nome_evento td:last-child{
+        margin-bottom: 24px;
+    }
+
+    .nome_evento td::first-child{
+        margin-top: 24px;
+    }
+}
