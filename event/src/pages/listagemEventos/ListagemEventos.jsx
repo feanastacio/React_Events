@@ -3,13 +3,13 @@ import Footer from "../../components/footer/Footer"
 import comentario from "../../assets/images/comentario.svg"
 import "./ListagemEventos.css"
 
-const ListagemEventos = () =>{
-    return(
+const ListagemEventos = () => {
+    return (
         <>
             <Header>
                 visible="none"
-            </Header> 
-            <main className="main_listagemeventos">
+            </Header>
+            <main className="layout_grid main_listagemeventos">
                 <section className="listagem_eventos"></section>
                 <h1>Eventos</h1>
                 <hr />
@@ -36,9 +36,9 @@ const ListagemEventos = () =>{
                             </tr>
                         </tbody>
                     </table>
-                </div> 
-            </main>  
-            <Footer/>
+                </div>
+            </main>
+            <Footer />
         </>
     )
 }

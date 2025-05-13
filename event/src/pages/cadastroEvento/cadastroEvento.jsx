@@ -6,23 +6,23 @@ import banner_cadastro from "../../assets/images/bannerCadastroEventos.svg"
 import "./CadastroEvento.css"
 
 const cadastroEvento = () => {
-    return(
+    return (
         <>
-        <Header
-        visibilidade="none"
-        />           
-        <Cadastro
-        img_banner={banner_cadastro}
-        tituloCadastro = "Cadastro de Evento"
-        nomes="Nome"
-        visible
-        />
-        <Lista
-        nomeLista="Lista Tipo de Eventos"
-        Titulo="Nome"
-        Titulo_Tipoevento=""
-        />
-        <Footer/>
+            <Header
+                visibilidade="none"
+            />
+            <Cadastro
+                img_banner={banner_cadastro}
+                tituloCadastro="Cadastro de Evento"
+                nomes="Nome"
+                visible
+            />
+            <Lista
+                nomeLista="Lista Tipo de Eventos"
+                Titulo="Nome"
+                Titulo_Tipoevento=""
+            />
+            <Footer />
         </>
     )
 }

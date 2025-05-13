@@ -6,24 +6,24 @@ import banner_cadastro from "../../assets/images/bannerTipoUsuario.svg"
 import "./TipoUsuario.css"
 
 const TipoUsuario = () => {
-    return(
+    return (
         <>
-        <Header
-        visibilidade="none"
-        />           
-        <Cadastro
-        img_banner={banner_cadastro}
-        tituloCadastro = "Cadastro Tipo de Usuário"
-        nomes="Nome"
-        visible="none"
-        />
-        <Lista
-        nomeLista="Lista Tipo de Usuario"
-        Titulo="Titulo"
-        visible="none"
-        visibilidade="none"
-        />
-        <Footer/>
+            <Header
+                visibilidade="none"
+            />
+            <Cadastro
+                img_banner={banner_cadastro}
+                tituloCadastro="Cadastro Tipo de Usuário"
+                nomes="Nome"
+                visible="none"
+            />
+            <Lista
+                nomeLista="Lista Tipo de Usuario"
+                Titulo="Titulo"
+                visible="none"
+                visibilidade="none"
+            />
+            <Footer />
         </>
     )
 }

@@ -1,11 +1,39 @@
 
-.main_listagemeventos{
-    display: flex;
+.listagemEventos
+{
     flex-direction: column;
-    background-color: bisque;
+    display: flex;
 }
 
-.listagem_eventos{
-    
+.listagemEventos h1{
+    display: flex;
+    justify-content: center;
 }
 
+.select{
+    margin: 10px;
+    width: 300px;
+    margin-top: 50px;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+}
+
+.listagemEventos hr{
+    width: 300px;
+    color: #b51d44;
+    margin: 0 auto;
+}
+
+.item_listaEventos{
+display: flex;
+
+}
+
+.table_eventos{
+ display: flex;
+}
+
+.table_eventos th{
+    gap: 50px;
+}
