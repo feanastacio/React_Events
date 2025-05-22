@@ -4,7 +4,7 @@ import "./Cadastro.css"
 const Cadastro = (props) => {
     return(
         <section>
-            <form action="" className="layout_grid  form_cadastro" >
+            <form onSubmit={props.funcCadastro} action="" className="layout_grid  form_cadastro" >
                 <h1>{props.tituloCadastro}</h1>
                 <hr /> 
                 <div className="campos_cadastro">
@@ -14,7 +14,10 @@ const Cadastro = (props) => {
                     <div className="campo_preenchido">
                         <div className="campos_cad_nome">
                             <label htmlFor=""></label>
-                                <input type="text" name="Nome" placeholder={props.nomes}/>                               
+                                <input type="text" name="Nome" placeholder={props.nomes}
+                                    value={props.valorInput}
+                                    onChange={(e) => props.setValorInput(e.target.value)}
+                                />                               
                         </div>
                         <div className="campos_cad_evento" style={{display: props.visible}}>
                             <label htmlFor="evento"></label>

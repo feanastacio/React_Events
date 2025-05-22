@@ -1,5 +1,5 @@
 import Editar from "../../assets/images/editar.svg";
-import Deletar from "../../assets/images/excluir.svg";
+import Excluir from "../../assets/images/excluir.svg";
 import "./Lista.css";
 
 const Lista = (props) => {
@@ -18,12 +18,19 @@ const Lista = (props) => {
                         </tr>
                     </thead>
                     <tbody>
-                        <tr className="item_lista">
-                            <td data-cell={props.TituloTipoevento}>abc</td>
-                            <td style={{display:props.visibilidade}} data-cell="">abc</td>
-                            <td data-cell="Editar"><img src={Editar} alt="Caneta" /></td>
-                            <td data-cell="Deletar"><img src={Deletar} alt="Lixinho" /></td>
-                        </tr>
+                        {props.lista && props.lista.length > 0 ?(
+                            props.lista.map((item) => (
+                            <tr className="item_lista" key={item.idTipoevento}>
+                                <td data-cell={props.titulo}>{item.tituloTipoEvento}</td>
+                                <td style={{display:props.visibilidade}} data-cell="">abc</td>
+                                <td data-cell="Editar"><img src={Editar} alt="Caneta" onClick={()=> (props.funcEditar(item))} /></td>
+                                <td data-cell="Excluir"><img src={Excluir} alt="Lixeira" onClick={()=> (props.funcExcluir(item))}/></td>
+                            </tr> ))
+                            ) : 
+                            (
+                                <p>Nenhum evento cadastrado!</p>
+                            )
+                        }
                     </tbody>
                 </table>
             </div>
