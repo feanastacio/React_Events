@@ -1,5 +1,5 @@
 import Swal from 'sweetalert2'
-import { useEffect, useState } from "react";
+import {useEffect, useState } from "react";
 
 import api from "../../Services/Services";
 import Footer from "../../components/footer/Footer";
@@ -58,7 +58,7 @@ const TipoEvento = () => {
 
     async function editarTipoEvento(tipoEvento) {
         const { value: novoTipoEvento } = await Swal.fire({
-            title: "Modifique o tipo de evneto: ",
+            title: "Modifique o tipo de evento: ",
             input: "text",
             inputLabel: "Novo tipo de evento",
             inputValue: tipoEvento.tituloTipoEvento, 
@@ -80,7 +80,7 @@ const TipoEvento = () => {
         }
     }
 
-     async function excluirTipoEvento(tiposEventos) {
+    async function excluirTipoEvento(tiposEventos) {
         Swal.fire({
             title: "Você tem certeza?",
             text: "Você não vai conseguir reverter isso!",
@@ -119,12 +119,14 @@ const TipoEvento = () => {
                 tituloCadastro="Cadastro Tipo de Evento"
                 nomes="Título"
                 visible="none"
+                visibilidade="none"
             />
             <Lista
                 nomeLista="Lista Tipo de Eventos"
                 Titulo="Titulo"
                 visible="none"
                 visibilidade="none"
+                tipoLista="TiposEventos"
                 lista={listaTipoEvento}
                 funcEditar={editarTipoEvento}
                 funcExcluir={excluirTipoEvento}

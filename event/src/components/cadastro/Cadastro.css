@@ -31,8 +31,8 @@
     align-items: center;
 }
 
-.campos_cad_nome input, 
-.campos_cad_evento select{
+.campos_cad_nome input,
+.campos_cad_tipoevento select{
     margin: 30px;
     width: 300px;
     height: 30px;
@@ -47,6 +47,52 @@
     border-radius: 2px;
     border-color: #000000;
 }
+
+.campo_cad_nome input{
+    margin-bottom: 70px;
+    width: 300px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    outline: none;
+}
+
+.campo_cad_data input{
+    margin-bottom: 70px;
+    width: 300px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    outline: none;
+}
+
+.campo_cad_instituicao select{
+    margin-bottom: 70px;
+    width: 300px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    outline: none;
+}
+
+.campo_cad_descricao textarea {
+    margin-bottom: 40px;
+    width: 300px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    outline: none;
+}
+
+/* .campo_cad_tipoevento select{
+    margin-bottom: 70px;
+    width: 300px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    outline: none;
+} */
+
 
 .campos_cad_evento{
     color: #B4A9A9;
