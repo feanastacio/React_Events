@@ -64,6 +64,6 @@ footer{
 }
 
 h1{
-    border-bottom: 1px solid #B51D44;
+    /* border-bottom: 1px solid #B51D44; */
     text-transform: uppercase;
 }

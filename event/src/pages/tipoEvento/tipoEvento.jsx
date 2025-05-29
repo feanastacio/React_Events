@@ -118,13 +118,14 @@ const TipoEvento = () => {
                 setValorInput={setTipoEvento}
                 tituloCadastro="Cadastro Tipo de Evento"
                 nomes="Título"
-                visible="none"
+                // visible="none"
                 visibilidade="none"
             />
             <Lista
-                nomeLista="Lista Tipo de Eventos"
-                Titulo="Titulo"
-                visible="none"
+                titulo_lista="Tipo de Eventos"
+                titulo="Titulo"
+                // visible="none"
+                // visible1="none"
                 visibilidade="none"
                 tipoLista="TiposEventos"
                 lista={listaTipoEvento}

@@ -23,38 +23,45 @@ const Cadastro = (props) => {
                                 />                               
                         </div>
 
-                        <div className="campo_cad_data" style={{display: props.visibilidade}}>
-                            <input type="date" 
-                                value={props.valorDate}
-                                onChange={(e) => props.setValorDate(e.target.value)}
-                                placeholder="Data do Evento"
-                            />
-                        </div>
+                        <div className="todos_campos" style={{display: props.visibilidade}}>
 
-                        <div className="campos_cad_tipoevento" style={{display: props.visible}}>
-                            <label htmlFor="evento"></label>
-                            <select name="Tipo de evento" id="">
-                                <option value="" disabled selected>Tipo Evento</option>
-                                <option value="">123</option>
-                                {props.lista && props.lista.length > 0 && props.lista.map((itemTipoEvento) =>
-                                (
-                                    <option value={itemTipoEvento.idTipoEvento}>{itemTipoEvento.tituloTipoEvento}</option>                                                             
-                                ))}
-                            </select>
-                        </div>
+                            <div className="campo_cad_data">
+                                <input type="date" 
+                                    style={{display: props.data}}
+                                    value={props.valorDate}
+                                    onChange={(e) => props.setValorDate(e.target.value)}
+                                />
+                            </div>
 
-                        <div className="campo_cad_instituicao" style={{display:props.visibilidade}}>
-                            <select name="Instituição" id=""
-                                value={props.valorSelectt}
-                                onChange={(e) => props.setValorText(e.target.value)}
-                            >
-                                <option value="" disabled selected>Instituição</option>
-                                <option value="">PingPong</option>
-                            </select>
-                        </div>
+                            <div className="campos_cad_tipoevento">
+                                <label htmlFor="Nome"></label>
+                                <select name="Tipo de evento" id="" className="select_cad"
+                                    onChange={(e) => props.setValorSelectt(e.target.value)}
+                                >
+                                    <option value="" disabled selected>Tipo Evento</option>
+                                    {props.lista && props.lista.length > 0 && props.lista.map((itemTipoEvento) =>
+                                    (
+                                        <option value={itemTipoEvento.idTipoEvento}>{itemTipoEvento.tituloTipoEvento}</option>                                                             
+                                    ))}
+                                </select>
+                            </div>
 
-                        <div className="campo_cad_descricao" style={{display:props.visibilidade}}>
-                            <textarea name="" id="" placeholder="Descrição"></textarea>
+                            <div className="campo_cad_instituicao">
+                                <select name="" id=""
+                                    value={props.valorSelect}
+                                    onChange={(e) => props.setValorText(e.target.value)}
+                                >
+                                    <option disabled selected value="">Senai</option>                                   
+                                </select>
+                            </div>
+
+                            <div className="campo_cad_descricao">
+                                <textarea name="" id="" placeholder="Descrição" 
+                                    style={{display: props.descricao}}
+                                    value={props.valorText}
+                                    onChange={(e) => props.setValorText(e.target.value)}
+                                ></textarea>
+                            </div>
                         </div>
                         <Botao nomeDoBotao="Cadastrar"/>
                     </div>

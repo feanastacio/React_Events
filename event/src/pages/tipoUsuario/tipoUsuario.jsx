@@ -120,13 +120,14 @@ const TipoUsuario = () => {
                 setValorInput={setTipoUsuario}
                 tituloCadastro="Cadastro Tipo de Usuário"
                 nomes="Nome"
-                visible="none"
+                // visible="none"
                 visibilidade="none"
             />
             <Lista
-                nomeLista="Lista Tipo de Usuario"
-                Titulo="Titulo"
-                visible="none"
+                titulo_lista="Tipo de Usuario"
+                titulo="Titulo"
+                // visible="none"
+                // visible1="none"
                 visibilidade="none"
                 lista={listaTipoUsuario}
                 funcEditar={editarTipoUsuario}
