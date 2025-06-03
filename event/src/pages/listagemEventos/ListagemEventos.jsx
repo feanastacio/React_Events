@@ -1,54 +1,78 @@
 import "./ListagemEventos.css"
-import { Fragment } from "react";
+import { format } from "date-fns/fp";
+import { useEffect, useState } from "react";
+import api from "../../Services/Services.js";
 import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
-import Comentario from  "../../assets/images/comentario.svg";
-import Toggle from "../../components/toggle/Toggle";
+import Modal from "../../components/modal/Modal.jsx";
+import Toogle from "../../assets/images/inscrito.svg";
+import Comentario from "../../assets/images/comentario.svg";
+import Descricao from "../../assets/images/informacoes 1.svg";
 
 const ListagemEventos = () => {
-    return (
-        <Fragment>
-            <Header />
-            <section className="listagemEventos" id="">
+
+    const [listaEventos, setListaEventos] = useState([])
+
+        async function listarEventos() {
+            try {
+               const resposta = await api.get("Eventos");
+               setListaEventos(resposta.data);
+            } catch (error) {
+                console.log(error);   
+            }
+        }
+
+        useEffect(() => {
+            listarEventos();
+        },[])
+
+    return(
+        <>
+        <Header/>
+        <main className="main_lista_eventos layout-grid">
+            <div className="titulo">
                 <h1>Eventos</h1>
-                <hr />
-                <div className="tabela_eventos">
-                    <select className="select">
-                        <option value="" disabled selected>Todos os Eventos</option>
-                        <option value="">ping pong</option>
-                        <option value="">Games</option>
-                    </select>
-                    <table>
-                        <thead>
-                            <tr className="table_eventos">
-                                <th>Titulo</th>
-                                <th>Tipo Eventos</th>
-                                <th>Comentarios</th>
-                                <th>Participar</th>
+                <hr/>
+            </div>
+            <select name="" id="">
+                <option value="" selected> todos os eventos</option>
+            </select>
+            <table className="tabela_listagem_eventos">
+                <thead>
+                    <tr className="th_lista_eventos">
+                        <th>Título</th>
+                        <th>Data do Evento</th>
+                        <th>Tipo Evento</th>
+                        <th>Descrição</th>
+                        <th>Comentários</th>
+                        <th>Participar</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {listaEventos.length > 0 ? (
+                        listaEventos.map((item) => (
+                            <tr>
+                                <td>{item.nomeEvento}</td>
+                                <td>{format(item.dataEvento, "dd/MM/yy")}</td>
+                                <td>{item.tiposEventos.tituloTipoEvento}</td>
+                                <td><img className="icon" src={Descricao} alt="" /></td>
+                                <td><img className="icon" src={Comentario} alt="" /></td>
+                                <td><label className="switch">
+                                    <input type="checkbox" />
+                                    <span className="slider"></span>
+                                    </label>
+                                </td>
                             </tr>
-                        </thead>
-                        <tbody>
-                            <tr className="item_listaEventos">
-                                <td data-cell="Nome">Nome Evento</td>
-                                <td data-cell="Tipo Evento"> Tipo Evento</td>
-                                <td data-cell="Data">Data</td>
-                                <td daa-cell="Instituição">Instituição</td>
-                                <td data-cell="comentario"><img src={Comentario} alt="balao" /></td>
-                                <td data-cell="comentario"><Toggle /></td>
-                            </tr>
-                        </tbody>
-                        <tbody>
-                            <tr className="item_listaEventos">
-                                <td data-cell="Nome">Nome Evento</td>
-                                <td data-cell="Tipo Evento"> Tipo Evento</td>
-                                <td data-cell="comentario"><img src={Comentario} alt="balao" /></td>
-                                <td data-cell="comentario"><Toggle /></td>                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </section>
-            <Footer />
-        </Fragment>
+                        ))
+                    ): (
+                        <p>Não existe nenhum evento!</p>
+                    )}
+                </tbody>
+            </table>
+        </main>
+        <Footer/>
+        <Modal/>
+        </>
     )
 }
 

@@ -1,7 +1,7 @@
 import Swal from 'sweetalert2'
 import {useEffect, useState } from "react";
 
-import api from "../../Services/Services";
+import api from "../../Services/Services.js";
 
 import Lista from "../../components/lista/Lista";
 import Footer from "../../components/footer/Footer";
@@ -175,6 +175,7 @@ const CadastroEvento = () => {
             <Header
                 visibilidade="none"
             />
+
             <Cadastro
                 tituloCadastro="Cadastro de Evento"
                 img_banner={banner_cadastro}
@@ -200,7 +201,7 @@ const CadastroEvento = () => {
             />
 
             <Lista
-                nomeLista="Lista Tipo de Eventos"
+                titulo_lista="de Eventos"
                 titulo="Nome"
                 tipoLista="TiposEventos"
                 lista={listaEvento}
