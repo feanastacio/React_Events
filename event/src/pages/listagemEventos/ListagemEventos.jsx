@@ -8,6 +8,7 @@ import Modal from "../../components/modal/Modal.jsx";
 import Comentario from "../../assets/images/comentario.svg";
 import Descricao from "../../assets/images/informacoes 1.svg";
 import Swal from "sweetalert2";
+import { useAuth } from "../../contexts/AuthContext.js";
 
 const ListagemEventos = () => {
 
@@ -16,15 +17,16 @@ const ListagemEventos = () => {
     const [dadosModal, setDadosModal] = useState({});
     const [modalAberto, setModalAberto] = useState(false);
     const [filtroData, setFiltroData] = useState(["todos"]);
-
-    const [usuarioId, setUsuarioId] = useState("0CE974E0-6D5C-41D1-BA9C-BEBED37B9FFB");
+    
+    const {usuario} = useAuth();
+    // const [usuarioId, setUsuarioId] = useState("0CE974E0-6D5C-41D1-BA9C-BEBED37B9FFB");
 
         async function listarEventos() {
             try {
                 const resposta = await api.get("Eventos");
                 const todosOsEventos = resposta.data;
 
-                const respostaPresenca = await api.get("PresencasEventos/ListarMinhas/"+usuarioId)
+                const respostaPresenca = await api.get("PresencasEventos/ListarMinhas/"+usuario.idUsuaio)
                 const minhasPresencas = respostaPresenca.data;
                 const eventosComPresencas = todosOsEventos.map((atualEvento) => {
                     const presenca = minhasPresencas.find(p => p.idEvento === atualEvento.idEvento);
@@ -44,6 +46,7 @@ const ListagemEventos = () => {
 
         useEffect(() => {
             listarEventos();
+            console.log(usuario);
         },[])
 
         function abrirModal(tipo, dados){
@@ -70,7 +73,7 @@ const ListagemEventos = () => {
                     Swal.fire('Confirmado!', 'Sua presenca foi confirmada.', 'success');
                 } else{
                     //  cadastrar uma nova presenca
-                    await api.post("PresencasEventos", {situacao: true, idUsuaio: usuarioId, idEvento: idEvento})
+                    await api.post("PresencasEventos", {situacao: true, idUsuaio: usuario.idUsuaio, idEvento: idEvento})
                     Swal.fire('Confirmado!', 'Sua presenca foi confirmada.', 'success');
                 }
                 listarEventos()

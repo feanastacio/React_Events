@@ -8,6 +8,7 @@ import secureLocalStorage from "react-secure-storage";
 import Swal from "sweetalert2";
 
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "../../contexts/AuthContext.js";
 
 const Login = () => {
 
@@ -15,6 +16,7 @@ const Login = () => {
     const [senha, setSenha] = useState("");
 
     const navigate = useNavigate();
+    const {setUsuario} = useAuth();
 
     async function realizarAutentificacao(e) {
         e.preventDefault();
@@ -31,8 +33,11 @@ const Login = () => {
                 if(token){
                     // token sera decscodificado
                     const tokenDecodificado = userDecodeToken(token);
-
+                    setUsuario(tokenDecodificado);
                     secureLocalStorage.setItem("tokenLogin", JSON.stringify(tokenDecodificado)); //ele esta pegando essa informacao e armazenando no estilo JSON
+                    
+                    // console.log("O tipo de usuario é:");
+                    // console.log(tokenDecodificado.tipoUsuario);
 
                     if (tokenDecodificado.tipoUsuario === "aluno") {
                         // redirecionar a tela de listagem de eventos (aluno)
